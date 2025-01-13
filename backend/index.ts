@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from 'mongoose';
 import mongoDb from "./mongoDb";
 import usersRouter from "./routers/users";
+import tasksRouter from "./routers/tasks";
 
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/users', usersRouter);
+app.use('/tasks', tasksRouter);
 
 const run = async () => {
     mongoose.set('strictQuery', false);
